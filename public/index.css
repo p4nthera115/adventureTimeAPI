@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(59, 71, 67);
+}
+
+.screen {
+  position: fixed;
+  background-color: rgb(168, 202, 191);
+  height: 133px;
+  width: 200px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.screen:hover {
+  border: 2px solid rgb(153, 121, 34);
+}

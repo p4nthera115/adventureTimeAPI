@@ -1,0 +1,151 @@
+swagger: '2.0'
+info:
+  title: Adventure time API
+  description: |
+    # Adventure Time API
+      The [Adventure Time API](https://adventuretimeapi.herokuapp.com) catalogs the people, places, and things found in [Adventure Time Wikia](http://adventuretime.wikia.com/wiki/Adventure_Time_with_Finn_and_Jake_Wiki). It was created as a resource for REST API testing and prototyping purposes.
+
+  version: 1.0.0
+  x-logo:
+    url: ./images/logo.png
+    backgroundColor: '#FFFFFF'
+host: adventuretimeapi.herokuapp.com
+schemes:
+  - https
+x-tagGroups:
+  - name: Endpoints
+    tags:
+      - People
+      - Places
+basePath: /
+produces:
+  - application/json
+paths:
+  /people:
+    get:
+      summary: Return all people
+      description: >
+        The People endpoint returns information about all of people.
+      tags:
+        - People
+      x-code-samples:
+        - lang: curl
+          source: >
+            curl -X GET -H "Content-Type: application/json"
+            https://adventuretimeapi.herokuapp.com/people
+        - lang: Python
+          source: |
+            import urllib2
+
+            urllib2.urlopen('https://adventuretimeapi.herokuapp.com/people').read()
+      responses:
+        '200':
+          description: An array of people
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/People'
+          examples:
+            application/json:
+              - id: r6Je
+                name: Finn
+                fullname: Finn Mertens
+                gender: Male
+                url: 'https://adventuretimeapi.herokuapp.com/people/r6Je'
+              - id: 53YK
+                nick_name: Jake
+                name: Jake the Dog
+                gender: Male
+                url: 'https://adventuretimeapi.herokuapp.com/people/53YK'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /places:
+    get:
+      summary: Return all places
+      description: >
+        The Places endpoint returns information about all of places.
+      tags:
+        - Places
+      x-code-samples:
+        - lang: curl
+          source: >
+            curl -X GET -H "Content-Type: application/json"
+            https://adventuretimeapi.herokuapp.com/places
+        - lang: Python
+          source: |
+            import urllib2
+
+            urllib2.urlopen('https://adventuretimeapi.herokuapp.com/places').read()
+      responses:
+        '200':
+          description: An array of places
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Places'
+          examples:
+            application/json:
+              - id: r6Je
+                name: Land of Ooo
+                type: Island
+                location:
+                  - Post-apocalyptic Earth
+                rulers: []
+                residents:
+                  - 'https://adventuretimeapi.herokuapp.com/people/r6Je'
+                  - 'https://adventuretimeapi.herokuapp.com/people/53YK'
+                  - 'https://adventuretimeapi.herokuapp.com/people/eLd7'
+                  - 'https://adventuretimeapi.herokuapp.com/people/Lz2b'
+                  - 'https://adventuretimeapi.herokuapp.com/people/p3kM'
+                  - 'https://adventuretimeapi.herokuapp.com/people/xAMz'
+                  - 'https://adventuretimeapi.herokuapp.com/people/Bk4N'
+                url: 'https://adventuretimeapi.herokuapp.com/places/rOwQ'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+definitions:
+  People:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier representing a specific person
+      name:
+        type: string
+        description: Name of the person
+      fullname:
+        type: string
+        description: Full Name of the person
+      gender:
+        type: string
+        description: Gender of the person
+      url:
+        type: string
+        description: URL of the person
+  Places:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier representing a specific place
+      name:
+        type: string
+        description: Name of the place
+      type:
+        type: string
+        description: Type of the place
+      location:
+        type: array
+        description: Collection of location this place belongs to
+      rulers:
+        type: array
+        description: Collection of people rule this place
+      residents:
+        type: array
+        description: Collection of people live in this place
+      url:
+        type: string
+        description: URL of the place
