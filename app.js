@@ -16,13 +16,18 @@ async function character() {
   const res = await fetch(url);
   const character = await res.json();
 
-  const getPerson = await fetch(url + `/${character.id}`);
+  const getPerson = await fetch(url + `/r6Je`);
   const person = await getPerson.json();
 
   return person;
 }
-
-console.log(character());
+character()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
