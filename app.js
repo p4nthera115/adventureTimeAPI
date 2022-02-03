@@ -1,6 +1,6 @@
 import express from "express";
 import fetch from "node-fetch";
-// const morgan = require("morgan");
+import character from "./person";
 
 const app = express();
 
@@ -9,19 +9,8 @@ app.set("view engine", "ejs");
 app.listen(3000);
 
 app.use(express.static("public"));
-// app.use(morgan("dev"));
 
-async function character() {
-  const url = "https://adventuretimeapi.herokuapp.com/people";
-  const res = await fetch(url);
-  const character = await res.json();
-
-  const getPerson = await fetch(url + `/r6Je`);
-  const person = await getPerson.json();
-
-  return person;
-}
-character()
+character
   .then((result) => {
     console.log(result);
   })
