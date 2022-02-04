@@ -7,9 +7,12 @@
 
     <h1>Characters</h1>
 
+    <%- getCharacter.forEach(character => { %>
     <br />
-    <div class="character-box">
-      <a href="" class="character"></a>
-    </div>
+    <a href="/characters/<%= getCharacter.id %>" class="character">
+      <div class="character-box"></div>
+    </a>
+    <% }) %>
+
   </body>
 </html>

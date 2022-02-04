@@ -1,5 +1,4 @@
 import express from "express";
-import fetch from "node-fetch";
 import getCharacter from "./person";
 
 const app = express();
@@ -12,6 +11,14 @@ app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
   res.render("index", { title: "Home" });
+});
+
+app.get("/characters/:id", (req, res) => {
+  const id = req.params.id;
+  getCharacter(id).then((result) => {
+    console.log(result);
+    res.render("details");
+  });
 });
 
 app.use((req, res) => {
