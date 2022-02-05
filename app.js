@@ -1,5 +1,5 @@
 import express from "express";
-import getCharacter from "./person";
+import getCharacter from "./character";
 
 const app = express();
 
@@ -9,15 +9,21 @@ app.listen(3000);
 
 app.use(express.static("public"));
 
-app.get("/", async (req, res) => {
-  res.render("index", { title: "Home" });
+app.get("/", (req, res) => {
+  res.render("landing");
+});
+
+app.get("/home", (req, res) => {
+  getCharacter().then((result) => {
+    res.render("index", { title: "Home", characters: result });
+  });
 });
 
 app.get("/characters/:id", (req, res) => {
   const id = req.params.id;
-  getCharacter(id).then((result) => {
-    console.log(result);
-    res.render("details");
+  getCharacter(id).then((character) => {
+    console.log(character);
+    res.render("details", { title: character.name });
   });
 });
 

@@ -3,16 +3,11 @@
   <%- include("./partials/head.ejs") %>
 
   <body>
-    <div class="screen"></div>
-
-    <h1>Characters</h1>
-
-    <%- getCharacter.forEach(character => { %>
+    <% characters.forEach((character) => { %>
     <br />
-    <a href="/characters/<%= getCharacter.id %>" class="character">
+    <a href="/characters/<%= character.id %>" class="character">
       <div class="character-box"></div>
     </a>
     <% }) %>
-
   </body>
 </html>
