@@ -4,10 +4,13 @@
 
   <body>
     <% characters.forEach((character) => { %>
-    <br />
-    <a href="/characters/<%= character.id %>" class="character">
-      <div class="character-box"></div>
-    </a>
+    <form action="/characters/<%= character.id %>" class="character">
+      <button class="character-box" type="submit"></button>
+    </form>
     <% }) %>
   </body>
 </html>
+
+<!-- <a href="/characters/<%=// character.id %>" class="character">
+      <div class="character-box"><%=// character.name %></div>
+    </a> -->
