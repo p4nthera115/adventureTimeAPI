@@ -5,7 +5,7 @@
   <body>
     <% characters.forEach((character) => { %>
     <form action="/characters/<%= character.id %>" class="character">
-      <button class="character-box" type="submit"></button>
+      <button class="character-box" type="submit"><%= character.name %></button>
     </form>
     <% }) %>
   </body>
