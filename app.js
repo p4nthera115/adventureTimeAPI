@@ -1,5 +1,6 @@
 import express from "express";
-import getCharacter from "./character";
+import getCharacter from "./getCharacter";
+import getPlaces from "./getPlaces";
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.get("/", (req, res) => {
   res.status(200).redirect("/home");
 });
 app.get("/home", (req, res) => {
-  res.render("landing");
+  res.render("landing", { title: "Home" });
 });
 
 app.get("/characters", (req, res) => {
@@ -21,12 +22,23 @@ app.get("/characters", (req, res) => {
     res.render("characters", { title: "Characters", characters: result });
   });
 });
-
 app.get("/characters/:id", (req, res) => {
   const id = req.params.id;
   getCharacter(id).then((character) => {
     console.log(character);
     res.render("details", { title: character.name });
+  });
+});
+
+app.get("/places", (req, res) => {
+  getPlaces().then((result) => {
+    res.render("places", { title: "Places", places: result });
+  });
+});
+app.get("/places/:id", (req, res) => {
+  const id = req.params.id;
+  getPlaces(id).then((place) => {
+    res.render("details", { title: place.name });
   });
 });
 

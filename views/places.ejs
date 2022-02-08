@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs")%>
+  <body>
+    <% places.forEach((place) => { %>
+    <form method="get" action="/places/<%= place.id %>">
+      <button class="place-box" type="submit"></button>
+    </form>
+    <% }) %>
+  </body>
+</html>
