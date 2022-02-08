@@ -5,13 +5,31 @@ body {
 .screen {
   position: fixed;
   background-color: rgb(145, 218, 195);
-  height: 150px;
-  width: 210px;
-  top: 40%;
+  height: 225px;
+  width: 315px;
+  top: 31%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid black;
+  z-index: 3;
+}
+
+.characters-button {
+  position: fixed;
+}
+
+.bmo-body {
+  position: fixed;
+  background-color: rgb(34, 143, 116);
+  height: 530px;
+  width: 370px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border: 1px solid black;
+  z-index: 2;
 }
 
 .character-box {
@@ -26,9 +44,9 @@ body {
   border: 1px solid rgba(195, 241, 239, 0.842);
 }
 
-.screen:hover {
-  border: 2px solid rgb(153, 121, 34);
-}
+/* .screen:hover {
+  border: 2px solid rgb(180, 189, 57);
+} */
 
 .fullscreen {
   position: absolute;

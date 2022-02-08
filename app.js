@@ -10,12 +10,15 @@ app.listen(3000);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
+  res.status(200).redirect("/home");
+});
+app.get("/home", (req, res) => {
   res.render("landing");
 });
 
-app.get("/home", (req, res) => {
+app.get("/characters", (req, res) => {
   getCharacter().then((result) => {
-    res.render("index", { title: "Home", characters: result });
+    res.render("characters", { title: "Characters", characters: result });
   });
 });
 
