@@ -14,6 +14,11 @@ body {
   border: 1px solid black;
   z-index: 2;
 }
+
+/* #wrap {
+  min-width: 600px;
+} */
+
 .character-hover {
   display: none;
 }
@@ -30,16 +35,16 @@ body {
 .characters-button {
   position: fixed;
   top: 64%;
-  left: 58%;
+  left: 50%;
   z-index: 3;
-  transform: translate(-50%, -50%);
+  transform: translate(10%, -50%);
 }
 .triangle-border-white {
   position: fixed;
   top: 63.68%;
-  left: 58%;
+  left: 50%;
   z-index: 2;
-  transform: translate(-50%, -50%);
+  transform: translate(6.5%, -50%);
 }
 .characters-button:hover + .character-hover {
   display: block;
@@ -48,22 +53,22 @@ body {
 .triangle-border {
   position: fixed;
   top: 63.68%;
-  left: 58%;
+  left: 50%;
   z-index: 1;
-  transform: translate(-50%, -50%);
+  transform: translate(6.5%, -50%);
 }
 
 .game-button {
   position: fixed;
-  height: 83px;
-  width: 83px;
+  height: 87px;
+  width: 87px;
   background-color: red;
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
   top: 78%;
-  left: 65%;
-  transform: translate(-50%, -50%);
+  left: 50%;
+  transform: translate(30%, -50%);
   z-index: 2;
 }
 .game-button:hover {
@@ -108,6 +113,7 @@ body {
   border: 1px solid rgba(195, 241, 239, 0.842);
 }
 
+/* Places Page */
 .place-box {
   position: relative;
   background-color: grey;
