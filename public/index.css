@@ -1,5 +1,11 @@
+@font-face {
+  font-family: bmoFont;
+  src: url(disposabledroid-bb/DisposableDroidBB.ttf);
+}
+
 body {
   background-color: #333;
+  font-family: bmoFont;
 }
 
 .screen {
@@ -15,10 +21,48 @@ body {
   z-index: 2;
 }
 
-/* #wrap {
-  min-width: 600px;
-} */
+/* Places Button */
 
+.places-hover {
+  display: none;
+}
+.places-title {
+  position: fixed;
+  top: 27%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: rgba(3, 51, 73, 0.575);
+}
+
+.places-button {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-130%, -50%);
+  z-index: 3;
+}
+
+.plus-border {
+  position: fixed;
+  top: 69.63%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-127.75%, -50%);
+}
+.plus-border-white {
+  position: fixed;
+  top: 69.63%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-127.75%, -50%);
+}
+
+.places-button:hover + .places-hover {
+  display: block;
+}
+
+/* Character Button*/
 .character-hover {
   display: none;
 }
@@ -29,7 +73,6 @@ body {
   z-index: 3;
   transform: translate(-50%, -50%);
   color: rgba(3, 51, 73, 0.575);
-  /* display: none; */
 }
 
 .characters-button {
@@ -37,27 +80,28 @@ body {
   top: 64%;
   left: 50%;
   z-index: 3;
-  transform: translate(10%, -50%);
+  transform: translate(50%, -50%);
 }
 .triangle-border-white {
   position: fixed;
-  top: 63.68%;
+  top: 63.62%;
   left: 50%;
   z-index: 2;
-  transform: translate(6.5%, -50%);
+  transform: translate(44.25%, -50%);
 }
+.triangle-border {
+  position: fixed;
+  top: 63.62%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(44.25%, -50%);
+}
+
 .characters-button:hover + .character-hover {
   display: block;
 }
 
-.triangle-border {
-  position: fixed;
-  top: 63.68%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(6.5%, -50%);
-}
-
+/* Game Button */
 .game-button {
   position: fixed;
   height: 87px;
@@ -68,7 +112,7 @@ body {
   display: inline-block;
   top: 78%;
   left: 50%;
-  transform: translate(30%, -50%);
+  transform: translate(50%, -50%);
   z-index: 2;
 }
 .game-button:hover {
@@ -84,6 +128,36 @@ body {
   display: none;
 }
 .game-button:hover + .game-title {
+  display: block;
+}
+
+/* About Button */
+.about-button {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(49, 165, 39);
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  top: 64%;
+  left: 50%;
+  transform: translate(190%, -50%);
+  z-index: 2;
+}
+.about-button:hover {
+  border: 1px solid white;
+}
+.about-title {
+  position: fixed;
+  top: 27%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: rgba(3, 51, 73, 0.575);
+  display: none;
+}
+.about-button:hover + .about-title {
   display: block;
 }
 
