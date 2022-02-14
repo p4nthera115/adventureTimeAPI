@@ -3,9 +3,14 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <h1><%= place.name %></h1>
-    <p><%= place.type %></p>
-    <p><%= place.location %></p>
-    <p><%= place.rulers %></p>
-    <p><%= place.residents %></p>
+    <p>Type: <%= place.type %></p>
+    <p>Location: <%= place.location %></p>
+    <p>Rulers: <%= place.rulers %></p>
+    <p>Residents: </p>
+    <% place.residents.forEach((resident) => { %>
+    <form action="/characters/<%= resident.id %>" class="character">
+      <button class="character-box" type="submit"><%= resident.name %></button>
+    </form>
+    <% }) %>
   </body>
 </html>
