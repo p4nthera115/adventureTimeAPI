@@ -8,11 +8,12 @@
     <div>
       <img
         src="/landingAnimation.svg"
-        alt="landing animation"
-        id="landingAnim"
+        alt="landing-animation"
+        class="bmo-face"
+        id="landing-animation"
       />
       <script>
-        $("#landingAnim").delay(1000).hide(0);
+        $("#landing-animation").delay(1500).hide(0);
       </script>
     </div>
 
@@ -61,6 +62,9 @@
         <img src="/plusBorder.svg" alt="plusBorder" class="plus-border" />
       </div>
     </div>
-    <div class="bmo-face">bmo face</div>
+    <img src="/animation.svg" alt="bmo-face" class="bmo-face" id="animation" />
+    <script>
+      $("#animation").hide(0).delay(1500).show(0);
+    </script>
   </body>
 </html>
