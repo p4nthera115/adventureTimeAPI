@@ -26,7 +26,7 @@ app.get("/characters/:id", (req, res) => {
   const id = req.params.id;
   getCharacter(id).then((character) => {
     console.log(character);
-    res.render("characterDetails", { title: character.name });
+    res.render("characterDetails", { title: character.name, character });
   });
 });
 
@@ -38,7 +38,8 @@ app.get("/places", (req, res) => {
 app.get("/places/:id", (req, res) => {
   const id = req.params.id;
   getPlaces(id).then((place) => {
-    res.render("placeDetails", { title: place.name });
+    console.log(place);
+    res.render("placeDetails", { title: place.name, place });
   });
 });
 
