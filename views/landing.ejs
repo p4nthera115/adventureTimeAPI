@@ -5,18 +5,6 @@
     <div class="screen"></div>
     <div class="bmo-body"></div>
 
-    <div>
-      <img
-        src="/landingAnimation.svg"
-        alt="landing-animation"
-        class="bmo-face"
-        id="landing-animation"
-      />
-      <script>
-        $("#landing-animation").delay(1500).hide(0);
-      </script>
-    </div>
-
     <div class="buttons">
       <div>
         <a href="/characters" class="characters-button">
@@ -62,9 +50,27 @@
         <img src="/plusBorder.svg" alt="plusBorder" class="plus-border" />
       </div>
     </div>
-    <img src="/animation.svg" alt="bmo-face" class="bmo-face" id="animation" />
-    <script>
-      $("#animation").hide(0).delay(1500).show(0);
-    </script>
+
+    <div class="bmo-face">
+      <img
+        src="/landingAnimation.svg"
+        alt="landing-animation"
+        class="bmo-face"
+        id="landing-animation"
+      />
+      <script>
+        $("#landing-animation").delay(1500).hide(0);
+      </script>
+
+      <img
+        src="/animation.svg"
+        alt="bmo-face"
+        class="bmo-face"
+        id="animation"
+      />
+      <script>
+        $("#animation").hide(0).delay(1500).show(0);
+      </script>
+    </div>
   </body>
 </html>
