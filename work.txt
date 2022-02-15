@@ -1,0 +1,2 @@
+residents and rulers in "placeDetails" needs to = characters from getCharacter()
+to be able to use character.name & character.id 
