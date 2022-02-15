@@ -5,12 +5,25 @@
     <h1><%= place.name %></h1>
     <p>Type: <%= place.type %></p>
     <p>Location: <%= place.location %></p>
-    <p>Rulers: <%= place.rulers %></p>
+
+    <p>Rulers:</p>
+    <% if (place.rulers == "") { %>
+      <p>No Rulers</p>
+    <% } else %>
+    <% place.rulers.forEach((ruler) => { %>
+      <% const rulerId = ruler.substr(ruler.length - 4) %>
+    <form action="/characters/<%= rulerId %>" class="character">
+      <button class="character-box" type="submit"></button>
+    </form>
+    <% }) %>
+
     <p>Residents:</p>
 
     <% place.residents.forEach((resident) => { %>
-    <form action="/characters/<%= resident.id %>" class="character">
-      <button class="character-box" type="submit"><%= resident.name %></button>
+      <% const residentId = resident.substr(resident.length - 4) %>
+      <% console.log(residentId) %>
+    <form action="/characters/<%= residentId %>" class="character">
+      <button class="character-box" type="submit"><%=  %></button>
     </form>
     <% }) %>
     
