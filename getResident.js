@@ -1,8 +1,8 @@
-import fetch from "node-fetch"
+import fetch from "node-fetch";
 
-async function getResident(resident) {
-    const result = await fetch(resident);
-    return await result.json();
+async function getResident(url) {
+  const result = await fetch(url);
+  return await result.json();
 }
 
 export default getResident;

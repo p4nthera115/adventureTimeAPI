@@ -40,7 +40,14 @@ app.get("/places/:id", (req, res) => {
   const id = req.params.id;
   getPlaces(id).then((place) => {
     console.log(place);
-    res.render("placeDetails", { title: place.name, place });
+    res.render("placeDetails", {
+      title: place.name,
+      place,
+      character: getCharacter(String(place.residents).substr(place.residents.length - 4)).then((result) => {
+        console.log(result);
+        return result;
+      }),
+    });
   });
 });
 
