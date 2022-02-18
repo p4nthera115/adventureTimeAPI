@@ -1,7 +1,6 @@
 import express from "express";
 import getCharacter from "./getCharacter";
 import getPlaces from "./getPlaces";
-import getResident from "./getResident";
 
 const app = express();
 
