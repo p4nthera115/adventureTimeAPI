@@ -9,8 +9,9 @@
     <p>Rulers:</p>
     <% if (place.rulers == "") { %>
     <p>No Rulers</p>
-    <% } else %> <% place.rulers.forEach((ruler) => { %> <% const rulerId =
-    ruler.substr(ruler.length - 4) %>
+    <% } else %> 
+    <% place.rulers.forEach((ruler) => { %> 
+    <% const rulerId = ruler.substr(ruler.length - 4) %>
     <form action="/characters/<%= rulerId %>" class="character">
       <button class="character-box" type="submit"></button>
     </form>
@@ -22,11 +23,9 @@
     <% place.residents.forEach((resident) => { %> 
     <% const residentId = resident.substr(resident.length - 4) %>
       <form action="/characters/<%= residentId %>" class="character">
-        <% if (character.url == place.resident) { %>
         <button class="character-box" type="submit">
           <%= character.name %>
         </button>
-        <% } %>
       </form>
     <% }) %>
   </body>
