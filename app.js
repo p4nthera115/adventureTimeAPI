@@ -1,4 +1,5 @@
-import express from "express";
+import express, { response } from "express";
+import fetch from "node-fetch";
 import getCharacter from "./getCharacter";
 import getPlaces from "./getPlaces";
 
@@ -38,21 +39,38 @@ app.get("/places", (req, res) => {
   });
 });
 
-
 app.get("/places/:id", (req, res) => {
   const id = req.params.id;
   getPlaces(id).then((place) => {
     console.log(place);
-    for (let i = 0; i < place.residents.length; i++) {
-      const resident = place.residents[i];
-      getCharacter(resident.substr(resident.length - 4)).then((result) => {
-        res.render("placeDetails", {
-          title: place.name,
-          place,
-          character: result,
+
+    const residents = place.residents;
+    console.log(residents);
+
+    const requests = residents.map((residentID) => {
+      residentID = residents.map((resident) => {
+        return resident.substr(resident.length - 4);
+      });
+      return getCharacter(residentID);
+    });
+    console.log(requests);
+
+    Promise.all(requests)
+      .then((responses) => {
+        for (let response of responses) {
+          console.log(response.url + ": " + response.status);
+        }
+        // console.log(responses);
+        return responses;
+      })
+      .then((responses) => {
+        responses.map((r) => {
+          res.render("placeDetails", {
+            place,
+            character: r,
+          });
         });
       });
-    }
   });
 });
 

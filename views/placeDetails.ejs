@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Adventure Time API | <%= place.name %></title>
+  </head>
+
   <body>
     <h1><%= place.name %></h1>
     <p>Type: <%= place.type %></p>
@@ -9,9 +17,8 @@
     <p>Rulers:</p>
     <% if (place.rulers == "") { %>
     <p>No Rulers</p>
-    <% } else %> 
-    <% place.rulers.forEach((ruler) => { %> 
-    <% const rulerId = ruler.substr(ruler.length - 4) %>
+    <% } else %> <% place.rulers.forEach((ruler) => { %> <% const rulerId =
+    ruler.substr(ruler.length - 4) %>
     <form action="/characters/<%= rulerId %>" class="character">
       <button class="character-box" type="submit"></button>
     </form>
@@ -19,14 +26,13 @@
 
     <p>Residents:</p>
 
-    <% console.log(character) %>
-    <% place.residents.forEach((resident) => { %> 
+    <% console.log(character) %> <% place.residents.forEach((resident) => { %>
     <% const residentId = resident.substr(resident.length - 4) %>
-      <form action="/characters/<%= residentId %>" class="character">
-        <button class="character-box" type="submit">
-          <%= character.name %>
-        </button>
-      </form>
+    <form action="/characters/<%= residentId %>" class="character">
+      <button class="character-box" type="submit">
+        <%= // character.name %>
+      </button>
+    </form>
     <% }) %>
   </body>
 </html>
