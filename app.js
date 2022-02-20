@@ -55,22 +55,27 @@ app.get("/places/:id", (req, res) => {
     });
     console.log(requests);
 
-    Promise.all(requests)
-      .then((responses) => {
-        for (let response of responses) {
-          console.log(response.url + ": " + response.status);
-        }
-        // console.log(responses);
-        return responses;
-      })
-      .then((responses) => {
-        responses.map((r) => {
-          res.render("placeDetails", {
-            place,
-            character: r,
-          });
-        });
+    // get requests out of array -
+    // function data() {
+    //   const requests = residents.map((residentID) => {
+    //     residentID = residents.map((resident) => {
+    //       return resident.substr(resident.length - 4);
+    //     });
+    //     return getCharacter(residentID);
+    //   });
+    //   requests.forEach((request) => {
+    //     console.log(request);
+    //   });
+    // }
+
+    Promise.all(requests).then((responses) => {
+      // console.log(responses);
+      responses.map((r) => {
+        console.log(r);
+        return res.render("placeDetails", { place, character: r });
       });
+    });
+
   });
 });
 
