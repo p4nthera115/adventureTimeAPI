@@ -47,35 +47,20 @@ app.get("/places/:id", (req, res) => {
     const residents = place.residents;
     console.log(residents);
 
-    const requests = residents.map((residentID) => {
-      residentID = residents.map((resident) => {
-        return resident.substr(resident.length - 4);
-      });
-      return getCharacter(residentID);
+    const requests = residents.map((residentID, i) => {
+      console.log(i, residentID);
+      const ID = residentID.substr(residentID.length - 4);
+      console.log(ID)
+      return getCharacter(ID);
     });
-    console.log(requests);
-
-    // get requests out of array -
-    // function data() {
-    //   const requests = residents.map((residentID) => {
-    //     residentID = residents.map((resident) => {
-    //       return resident.substr(resident.length - 4);
-    //     });
-    //     return getCharacter(residentID);
-    //   });
-    //   requests.forEach((request) => {
-    //     console.log(request);
-    //   });
-    // }
 
     Promise.all(requests).then((responses) => {
-      // console.log(responses);
+      console.log(responses);
       responses.map((r) => {
         console.log(r);
         return res.render("placeDetails", { place, character: r });
       });
     });
-
   });
 });
 
