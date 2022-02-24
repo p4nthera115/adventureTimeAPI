@@ -56,14 +56,7 @@ app.get("/places/:id", (req, res) => {
     });
 
     Promise.all(residentsRequests).then((residents) => {
-      residents.map((residents) => {
-        return residents;
-      });
-
       Promise.all(rulersRequests).then((rulers) => {
-        rulers.map((rulers) => {
-          return rulers;
-        });
         return res.render("placeDetails", {
           title: place.name,
           place,

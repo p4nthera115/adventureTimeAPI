@@ -2,10 +2,13 @@
 <html lang="en">
   <%- include("./partials/head.ejs")%>
   <body>
+    <%- include("./partials/body.ejs") %>
+
     <% places.forEach((place) => { %>
-    <form method="get" action="/places/<%= place.id %>">
-      <button class="place-box" type="submit"><%= place.name %></button>
-    </form>
+    <a href="/places/<%= place.id %>">
+      <p><%= place.name %></p>
+    </a>
     <% }) %>
+
   </body>
 </html>

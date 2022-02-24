@@ -3,10 +3,12 @@
   <%- include("./partials/head.ejs") %>
 
   <body>
+    <%- include("./partials/body.ejs") %>
+
     <% characters.forEach((character) => { %>
-    <form action="/characters/<%= character.id %>" class="character">
-      <button class="character-box" type="submit"><%= character.name %></button>
-    </form>
+    <a href="/characters/<%= character.id %>">
+      <p><%= character.name %></p>
+    </a>
     <% }) %>
   </body>
 </html>
