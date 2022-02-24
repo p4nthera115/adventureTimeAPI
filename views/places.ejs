@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs")%>
+  <%- include("./partials/head.ejs") %>
   <body>
     <%- include("./partials/body.ejs") %>
 
-    <% places.forEach((place) => { %>
-    <a href="/places/<%= place.id %>">
-      <p><%= place.name %></p>
-    </a>
-    <% }) %>
+    <div class="places-list-container">
+      <% places.forEach((place) => { %>
+      <a href="/places/<%= place.id %>">
+        <p class="list"><%= place.name %></p>
+      </a>
+      <% }) %>
+    </div>
 
   </body>
 </html>
