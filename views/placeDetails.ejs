@@ -15,25 +15,33 @@
     <p>Location: <%= place.location %></p>
 
     <p>Rulers:</p>
-    <% if (place.rulers == "") { %>
-    <p>No Rulers</p>
-    <% } else %> <% place.rulers.forEach((ruler) => { %> <% const rulerId =
-    ruler.substr(ruler.length - 4) %>
-    <form action="/characters/<%= rulerId %>" class="character">
-      <button class="character-box" type="submit"></button>
-    </form>
-    <% }) %>
 
-    <p>Residents:</p>
-
-    <% place.residents.forEach((resident) => { %>
-      <% const residentId = resident.substr(resident.length - 4) %>
-      <form action="/characters/<%= residentId %>" class="character">
-        <button class="character-box" type="submit">
-        </button>
-      </form>
-    <% }) %>
+    <% if (rulers.length == 0) { %>
+      <p>No rulers</p>
+    <% } else { %>
+      <% rulers.forEach((ruler) => { %>
+        <a href="/characters/<%= ruler.id %>">
+          <%= ruler.name %>
+        </a>
+        <br>
+      <% }) %>
+    <% } %>
 
     
+    <% console.log(rulers.length) %>
+    
+    <p>Residents:</p>
+
+    <% if (residents.length == 0) { %>
+      <p>No residents</p>
+    <% } else { %>
+      <% residents.forEach((resident) => { %>
+        <a href="/characters/<%= resident.id %>">
+          <%= resident.name %>
+        </a>
+        <br>
+      <% }) %>
+    <% } %>
+
   </body>
 </html>
