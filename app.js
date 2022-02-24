@@ -45,7 +45,6 @@ app.get("/places/:id", (req, res) => {
     console.log(place);
 
     const rulers = place.rulers;
-    // console.log(rulers);
 
     const rulersRequests = rulers.map((rulerID, i) => {
       const ID = rulerID.substr(rulerID.length - 4);
@@ -53,31 +52,25 @@ app.get("/places/:id", (req, res) => {
     });
 
     const residents = place.residents;
-    // console.log(residents);
 
     const residentsRequests = residents.map((residentID, i) => {
-      // console.log(i, residentID);
       const ID = residentID.substr(residentID.length - 4);
-      // console.log(ID)
       return getCharacter(ID);
     });
 
     Promise.all(residentsRequests).then((residents) => {
       residents.map((residents) => {
-        // console.log(residents);
         return residents;
       });
-      
+
       Promise.all(rulersRequests).then((rulers) => {
         rulers.map((rulers) => {
-          // console.log(rulers);
           return rulers;
         });
         return res.render("placeDetails", {
           place,
           residents,
           rulers,
-          // residentID: residents.id,
         });
       });
     });
