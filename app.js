@@ -1,5 +1,4 @@
-import express, { response } from "express";
-import fetch from "node-fetch";
+import express from "express";
 import getCharacter from "./getCharacter";
 import getPlaces from "./getPlaces";
 
@@ -45,17 +44,15 @@ app.get("/places/:id", (req, res) => {
     console.log(place);
 
     const rulers = place.rulers;
-
-    const rulersRequests = rulers.map((rulerID, i) => {
-      const ID = rulerID.substr(rulerID.length - 4);
-      return getCharacter(ID);
+    const rulersRequests = rulers.map((rulerId) => {
+      const id = rulerId.substr(rulerId.length - 4);
+      return getCharacter(id);
     });
 
     const residents = place.residents;
-
-    const residentsRequests = residents.map((residentID, i) => {
-      const ID = residentID.substr(residentID.length - 4);
-      return getCharacter(ID);
+    const residentsRequests = residents.map((residentId) => {
+      const id = residentId.substr(residentId.length - 4);
+      return getCharacter(id);
     });
 
     Promise.all(residentsRequests).then((residents) => {
