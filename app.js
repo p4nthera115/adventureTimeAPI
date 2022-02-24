@@ -68,6 +68,7 @@ app.get("/places/:id", (req, res) => {
           return rulers;
         });
         return res.render("placeDetails", {
+          title: place.name,
           place,
           residents,
           rulers,
