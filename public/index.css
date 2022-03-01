@@ -46,10 +46,21 @@ a {
   left: 50%;
   max-width: 225px;
   max-height: 225px;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  color: rgba(3, 51, 73, 0.575);
+  /* opacity: 0.85; */
+}
+.blankFill {
+  position: fixed;
+  top: 31%;
+  left: 50%;
+  max-width: 225px;
+  max-height: 225px;
   z-index: 3;
   transform: translate(-50%, -50%);
   color: rgba(3, 51, 73, 0.575);
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
 
 #title {
@@ -63,6 +74,9 @@ a {
   display: none;
 }
 .buttons:hover + .character-list-container {
+  display: none;
+}
+.buttons:hover + .blankFill {
   display: none;
 }
 
@@ -285,9 +299,7 @@ a {
 ::-webkit-scrollbar-button {
   height: 10px;
 }
-::-webkit-scrollbar-button
-
-.list {
+::-webkit-scrollbar-button .list {
   position: relative;
   font-size: 25px;
   z-index: 3;
