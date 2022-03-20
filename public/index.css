@@ -79,6 +79,9 @@ a {
 .buttons:hover + .blankFill {
   display: none;
 }
+.buttons:hover + .not-found-title {
+  display: none;
+}
 
 /* Places Button */
 
@@ -313,4 +316,15 @@ a {
 .list:hover {
   background-color: rgba(23, 84, 112, 0.822);
   color: rgb(145, 218, 195);
+}
+
+/* 404 Page */
+
+.not-found-title {
+  position: fixed;
+  top: 27%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 0, 0, 0.575);
 }
