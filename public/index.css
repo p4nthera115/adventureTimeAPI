@@ -70,10 +70,13 @@ a {
 .buttons:hover + .bmo-face {
   display: none;
 }
-.buttons:hover + .places-list-container {
+.buttons:hover + .places-container {
   display: none;
 }
-.buttons:hover + .character-list-container {
+.buttons:hover + .characters-container {
+  display: none;
+}
+.buttons:hover + .details-container {
   display: none;
 }
 .buttons:hover + .blankFill {
@@ -250,7 +253,7 @@ a {
 }
 
 /* Places Page */
-.places-list-container {
+.places-container {
   position: absolute;
   height: 225px;
   width: 315px;
@@ -277,7 +280,7 @@ a {
 }
 
 /* Character Page */
-.character-list-container {
+.characters-container {
   position: absolute;
   height: 225px;
   width: 315px;
@@ -302,7 +305,7 @@ a {
 ::-webkit-scrollbar-button {
   height: 10px;
 }
-::-webkit-scrollbar-button .list {
+/* ::-webkit-scrollbar-button .list {
   position: relative;
   font-size: 25px;
   z-index: 3;
@@ -311,7 +314,7 @@ a {
   padding-top: 5px;
   margin: 0%;
   color: rgb(23, 84, 112);
-}
+} */
 
 .list:hover {
   background-color: rgba(23, 84, 112, 0.822);
@@ -327,4 +330,62 @@ a {
   z-index: 3;
   transform: translate(-50%, -50%);
   color: rgba(255, 0, 0, 0.575);
+}
+
+/* Details Page */
+
+.details-container {
+  position: absolute;
+  height: 225px;
+  width: 315px;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 9px;
+  overflow: hidden;
+  overflow-y: scroll;
+  color: rgb(23, 84, 112);
+}
+
+.details {
+  position: relative;
+  font-size: 25px;
+  z-index: 3;
+  top: 5px;
+  padding-left: 7px;
+  margin: 0%;
+  padding-top: 10px;
+  color: rgb(23, 84, 112);
+}
+
+.title {
+  position: relative;
+  font-size: 40px;
+  top: 10px;
+  padding-left: 7px;
+  padding-bottom: 15px;
+  margin: 0%;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 3;
+  top: 5px;
+  padding-left: 7px;
+  margin: 0%;
+  padding-top: 10px;
+  color: rgb(23, 84, 112);
+}
+
+.subtitle-contents {
+  position: relative;
+  font-size: 25px;
+  z-index: 3;
+  padding-left: 7px;
+  margin: 0%;
+  padding-top: 5px;
+  color: rgb(23, 84, 112);
 }

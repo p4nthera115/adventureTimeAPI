@@ -4,35 +4,40 @@
   <%- include("./partials/head.ejs") %>
 
   <body>
-    <h1><%= place.name %></h1>
-    <p>Type: <%= place.type %></p>
-    <p>Location: <%= place.location %></p>
+    <%- include("./partials/body.ejs") %>
 
-    <p>Rulers:</p>
+    <div class="details-container">
+      <!-- <div class="details"> -->
+        <h1 class="title"><%= place.name %></h1>
+        <p class="subtitle">Type: </p>
+        <p class="subtitle-contents"><%= place.type %></p>
+        <p class="subtitle">Location: </p>
+        <p class="subtitle-contents"><%= place.location %></p>
 
-    <% if (rulers.length == 0) { %>
-      <p>No rulers</p>
-    <% } else { %>
-      <% rulers.forEach((ruler) => { %>
-        <a href="/characters/<%= ruler.id %>">
-          <%= ruler.name %>
-        </a>
-        <br>
-      <% }) %>
-    <% } %>
-    
-    <p>Residents:</p>
+        <p class="subtitle">Rulers:</p>
 
-    <% if (residents.length == 0) { %>
-      <p>No residents</p>
-    <% } else { %>
-      <% residents.forEach((resident) => { %>
-        <a href="/characters/<%= resident.id %>">
-          <%= resident.name %>
-        </a>
-        <br>
-      <% }) %>
-    <% } %>
+        <% if (rulers.length == 0) { %>
+          <p class="details">No rulers</p>
+        <% } else { %>
+          <% rulers.forEach((ruler) => { %>
+            <a href="/characters/<%= ruler.id %>">
+              <p class="list"><%= ruler.name %></p>
+            </a>
+          <% }) %>
+        <% } %>
+        
+        <p class="subtitle">Residents:</p>
 
+        <% if (residents.length == 0) { %>
+          <p class="details">No residents</p>
+        <% } else { %>
+          <% residents.forEach((resident) => { %>
+            <a href="/characters/<%= resident.id %>">
+              <p class="list"><%= resident.name %></p>
+            </a>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
   </body>
 </html>

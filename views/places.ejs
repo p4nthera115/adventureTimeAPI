@@ -4,7 +4,7 @@
   <body>
     <%- include("./partials/body.ejs") %>
 
-    <div class="places-list-container">
+    <div class="places-container">
       <% places.forEach((place) => { %>
       <a href="/places/<%= place.id %>">
         <p class="list"><%= place.name %></p>

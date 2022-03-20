@@ -6,7 +6,7 @@
     <%- include("./partials/body.ejs") %>
 
 
-    <div class="character-list-container">
+    <div class="characters-container">
       <% characters.forEach((character) => { %>
       <a href="/characters/<%= character.id %>">
         <p class="list"><%= character.name %></p>
