@@ -68,6 +68,10 @@ app.get("/places/:id", (req, res) => {
   });
 });
 
+app.get("/game", (req, res) => {
+  res.render("game", { title: "Game" });
+});
+
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
 });
