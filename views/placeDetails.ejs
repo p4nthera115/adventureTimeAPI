@@ -7,12 +7,17 @@
     <%- include("./partials/body.ejs") %>
 
     <div class="details-container">
-      <!-- <div class="details"> -->
         <h1 class="title"><%= place.name %></h1>
+
         <p class="subtitle">Type: </p>
         <p class="subtitle-contents"><%= place.type %></p>
+
         <p class="subtitle">Location: </p>
-        <p class="subtitle-contents"><%= place.location %></p>
+        <% if (place.location.length == 0) { %>
+          <p class="details">Unknown</p>
+        <% } else { %>
+          <p class="details"><%= place.location %></p>
+        <% } %>
 
         <p class="subtitle">Rulers:</p>
 
