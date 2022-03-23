@@ -40,6 +40,19 @@ a {
   z-index: 1;
 }
 
+.slot {
+  position: fixed;
+  height: 1.65rem;
+  width: 14.5rem;
+  background-color: rgba(56, 56, 56, 0.76);
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 2;
+  top: 53.5%;
+  left: 50%;
+  transform: translate(-64%, -50%);
+}
+
 .bmo-face-off {
   position: fixed;
   background-color: rgb(0, 0, 0);
@@ -286,16 +299,6 @@ a {
 ::-webkit-scrollbar-button {
   height: 10px;
 }
-/* ::-webkit-scrollbar-button .list {
-  position: relative;
-  font-size: 25px;
-  z-index: 3;
-  top: 5px;
-  padding-left: 7px;
-  padding-top: 5px;
-  margin: 0%;
-  color: rgb(23, 84, 112);
-} */
 
 .list:hover {
   background-color: rgba(23, 84, 112, 0.822);
@@ -362,11 +365,9 @@ a {
 
 /* Game Page */
 .coming-soon {
-  position: fixed;
-  top: 27%;
-  left: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
+  position: relative;
+  text-align: center;
+  padding-left: 15px;
   color: rgba(23, 84, 112, 0.795);
 }
 
