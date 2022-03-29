@@ -5,16 +5,14 @@
   <body>
     <%- include("./partials/body.ejs") %>
 
-
-    <div class="characters-container" id="hide">
-      <% characters.forEach((character) => { %>
-      <a href="/characters/<%= character.id %>">
-        <p class="list"><%= character.name %></p>
-      </a>
-      <% }) %>
+    <div class="body-container">
+      <div class="characters-container" id="hide">
+        <% characters.forEach((character) => { %>
+        <a href="/characters/<%= character.id %>">
+          <p class="list"><%= character.name %></p>
+        </a>
+        <% }) %>
+      </div>
     </div>
-
-    <!-- <div class="cover-scrollbar"></div> -->
-
   </body>
 </html>

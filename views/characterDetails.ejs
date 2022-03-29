@@ -3,13 +3,14 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <%- include("./partials/body.ejs") %>
-
-    <div class="details-container" id="hide">
-      <h1 class="title"><%= character.name %></h1>
-      <p class="subtitle">Fullname:</p>
-      <p class="subtitle-contents"><%= character.fullname %></p>
-      <p class="subtitle">Gender:</p>
-      <p class="subtitle-contents"><%= character.gender %></p>
+    <div class="body-container">
+      <div class="details-container" id="hide">
+        <h1 class="title"><%= character.name %></h1>
+        <p class="subtitle">Fullname:</p>
+        <p class="subtitle-contents"><%= character.fullname %></p>
+        <p class="subtitle">Gender:</p>
+        <p class="subtitle-contents"><%= character.gender %></p>
+      </div>
     </div>
   </body>
 </html>

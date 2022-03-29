@@ -3,14 +3,14 @@
   <%- include("./partials/head.ejs") %>
   <body>
     <%- include("./partials/body.ejs") %>
-
-    <div class="places-container" id="hide">
-      <% places.forEach((place) => { %>
-      <a href="/places/<%= place.id %>">
-        <p class="list"><%= place.name %></p>
-      </a>
-      <% }) %>
+    <div class="body-container">
+      <div class="places-container" id="hide">
+        <% places.forEach((place) => { %>
+        <a href="/places/<%= place.id %>">
+          <p class="list"><%= place.name %></p>
+        </a>
+        <% }) %>
+      </div>
     </div>
-
   </body>
 </html>

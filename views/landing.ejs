@@ -3,33 +3,39 @@
   <%- include("./partials/head.ejs")%>
   <body>
     <%- include("./partials/body.ejs") %>
-
-    <div class="bmo-face" id="hide">
-      <img
-        src="/landingAnimation.gif"
-        alt="landing-animation"
-        class="bmo-face"
-        id="landing-animation"
-      />
-      <script>
-        $("#landing-animation").delay(1000).hide(0);
-      </script>
-
-      <img src="/BMOface.gif" alt="bmo-face" class="bmo-face" id="animation" />
-      <script>
-        $("#animation").hide(0).delay(1000).show(0);
-      </script>
-
-      <div class="blankFill" id="hide">
+    <div class="body-container">
+      <div class="bmo-face" id="hide">
         <img
-          src="blankFill.png"
-          alt="blank-fill"
-          width="225px"
-          height="225px"
+          src="/landingAnimation.gif"
+          alt="landing-animation"
+          class="bmo-face"
+          id="landing-animation"
         />
         <script>
-          $(".blankFill").hide(0).delay(899).show(0).delay(30).hide(0);
+          $("#landing-animation").delay(1000).hide(0);
         </script>
+
+        <img
+          src="/BMOface.gif"
+          alt="bmo-face"
+          class="bmo-face"
+          id="animation"
+        />
+        <script>
+          $("#animation").hide(0).delay(1000).show(0);
+        </script>
+
+        <div class="blankFill" id="hide">
+          <img
+            src="blankFill.png"
+            alt="blank-fill"
+            width="225px"
+            height="225px"
+          />
+          <script>
+            $(".blankFill").hide(0).delay(899).show(0).delay(30).hide(0);
+          </script>
+        </div>
       </div>
     </div>
   </body>

@@ -5,43 +5,44 @@
 
   <body>
     <%- include("./partials/body.ejs") %>
+    <div class="body-container">
+      <div class="details-container" id="hide">
+          <h1 class="title"><%= place.name %></h1>
 
-    <div class="details-container" id="hide">
-        <h1 class="title"><%= place.name %></h1>
+          <p class="subtitle">Type: </p>
+          <p class="subtitle-contents"><%= place.type %></p>
 
-        <p class="subtitle">Type: </p>
-        <p class="subtitle-contents"><%= place.type %></p>
+          <p class="subtitle">Location: </p>
+          <% if (place.location.length == 0) { %>
+            <p class="details">Unknown</p>
+          <% } else { %>
+            <p class="details"><%= place.location %></p>
+          <% } %>
 
-        <p class="subtitle">Location: </p>
-        <% if (place.location.length == 0) { %>
-          <p class="details">Unknown</p>
-        <% } else { %>
-          <p class="details"><%= place.location %></p>
-        <% } %>
+          <p class="subtitle">Rulers:</p>
 
-        <p class="subtitle">Rulers:</p>
+          <% if (rulers.length == 0) { %>
+            <p class="details">No rulers</p>
+          <% } else { %>
+            <% rulers.forEach((ruler) => { %>
+              <a href="/characters/<%= ruler.id %>">
+                <p class="list"><%= ruler.name %></p>
+              </a>
+            <% }) %>
+          <% } %>
+          
+          <p class="subtitle">Residents:</p>
 
-        <% if (rulers.length == 0) { %>
-          <p class="details">No rulers</p>
-        <% } else { %>
-          <% rulers.forEach((ruler) => { %>
-            <a href="/characters/<%= ruler.id %>">
-              <p class="list"><%= ruler.name %></p>
-            </a>
-          <% }) %>
-        <% } %>
-        
-        <p class="subtitle">Residents:</p>
-
-        <% if (residents.length == 0) { %>
-          <p class="details">No residents</p>
-        <% } else { %>
-          <% residents.forEach((resident) => { %>
-            <a href="/characters/<%= resident.id %>">
-              <p class="list"><%= resident.name %></p>
-            </a>
-          <% }) %>
-        <% } %>
+          <% if (residents.length == 0) { %>
+            <p class="details">No residents</p>
+          <% } else { %>
+            <% residents.forEach((resident) => { %>
+              <a href="/characters/<%= resident.id %>">
+                <p class="list"><%= resident.name %></p>
+              </a>
+            <% }) %>
+          <% } %>
+        </div>
       </div>
     </div>
   </body>
