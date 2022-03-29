@@ -39,6 +39,17 @@ a {
   border: 1px solid black;
   z-index: 1;
 }
+.body-container {
+  position: fixed;
+  height: 530px;
+  width: 370px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 0, 0);
+  z-index: 1;
+}
 
 .slot {
   position: fixed;
@@ -408,12 +419,18 @@ a {
 }
 .github {
   position: relative;
-  text-align: center;
+  /* text-align: center; */
   color: rgb(23, 84, 112);
   font-size: 40px;
   font-weight: bold;
   z-index: 3;
   display: inline-block;
+  width: 100%;
+  top: 20%;
+}
+.github:hover {
+  background-color: rgba(23, 84, 112, 0.822);
+  color: rgb(145, 218, 195);
 }
 
 /* Game Page */
