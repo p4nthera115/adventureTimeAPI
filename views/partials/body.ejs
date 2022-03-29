@@ -3,8 +3,8 @@
   <div class="bmo-body"></div>
   <div class="slot"></div>
 </div>
-<!-- <div class="buttons-container"> -->
 
+<div class="buttons-container">
   <div class="buttons">
     <div>
       <a href="/home" class="home-button">
@@ -55,4 +55,12 @@
       <img src="/plusBorder.svg" alt="plusBorder" class="plus-border" />
     </div>
   </div>
-<!-- </div> -->
+  <script>
+    $(".buttons").mouseenter(function () {
+      $("#hide").hide();
+    });
+    $(".buttons").mouseleave(function () {
+      $("#hide").show();
+    });
+  </script>
+</div>

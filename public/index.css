@@ -110,9 +110,9 @@ a {
   opacity: 0.85;
 }
 
-/* #title {
-  top: 26%;
-} */
+#title {
+  top: 21%;
+}
 
 /* Places Button */
 
@@ -459,8 +459,4 @@ a {
   z-index: 3;
   transform: translate(-50%, -50%);
   color: rgba(255, 0, 0, 0.575);
-}
-
-.buttons:hover + #hide {
-  display: none;
 }
