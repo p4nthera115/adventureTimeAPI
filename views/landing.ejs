@@ -4,7 +4,7 @@
   <body>
     <%- include("./partials/body.ejs") %>
 
-    <div class="bmo-face">
+    <div class="bmo-face" id="hide">
       <img
         src="/landingAnimation.gif"
         alt="landing-animation"
@@ -20,7 +20,7 @@
         $("#animation").hide(0).delay(1000).show(0);
       </script>
 
-      <div class="blankFill">
+      <div class="blankFill" id="hide">
         <img
           src="blankFill.png"
           alt="blank-fill"
