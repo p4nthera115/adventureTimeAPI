@@ -72,6 +72,10 @@ app.get("/game", (req, res) => {
   res.render("game", { title: "Game" });
 });
 
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
+});
+
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
 });

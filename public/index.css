@@ -134,7 +134,7 @@ a {
   display: block;
 }
 
-/* Character Button*/
+/* Home Button*/
 .home-hover {
   display: none;
 }
@@ -203,7 +203,7 @@ a {
   display: block;
 }
 
-/* About Button */
+/* Character Button */
 .character-button {
   position: fixed;
   height: 50px;
@@ -230,6 +230,36 @@ a {
   display: none;
 }
 .character-button:hover + .character-title {
+  display: block;
+}
+
+/* About Button */
+.about-button {
+  position: fixed;
+  height: 33px;
+  width: 33px;
+  background-color: rgb(44, 19, 156);
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  top: 53.7%;
+  left: 50%;
+  transform: translate(320%, -50%);
+  z-index: 2;
+}
+.about-button:hover {
+  border: 1px solid white;
+}
+.about-title {
+  position: fixed;
+  top: 27%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: rgba(3, 51, 73, 0.575);
+  display: none;
+}
+.about-button:hover + .about-title {
   display: block;
 }
 
@@ -363,6 +393,29 @@ a {
   color: rgb(23, 84, 112);
 }
 
+/* About Page */
+.about-container {
+  position: absolute;
+  height: 225px;
+  width: 315px;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 9px;
+  color: rgb(23, 84, 112);
+  text-align: center;
+}
+.github {
+  position: relative;
+  text-align: center;
+  color: rgb(23, 84, 112);
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 3;
+  display: inline-block;
+}
+
 /* Game Page */
 .coming-soon {
   position: relative;
@@ -402,5 +455,8 @@ a {
   display: none;
 }
 .buttons:hover + .coming-soon {
+  display: none;
+}
+.buttons:hover + .about-container {
   display: none;
 }
