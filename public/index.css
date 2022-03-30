@@ -52,11 +52,11 @@ a {
 
 .buttons-container {
   position: absolute;
-  height: 530px;
+  height: 265px;
   width: 370px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -1%);
   border-radius: 20px;
   z-index: 10;
 }
@@ -115,7 +115,7 @@ a {
 }
 
 #title {
-  top: 21%;
+  top: -57%;
 }
 
 /* Places Button */
@@ -133,7 +133,7 @@ a {
 
 .places-button {
   position: fixed;
-  top: 75%;
+  top: 53%;
   left: 50%;
   transform: translate(-130%, -50%);
   z-index: 3;
@@ -141,14 +141,14 @@ a {
 
 .plus-border {
   position: fixed;
-  top: 74.63%;
+  top: 52.18%;
   left: 50%;
   z-index: 1;
   transform: translate(-127.75%, -50%);
 }
 .plus-border-white {
   position: fixed;
-  top: 74.63%;
+  top: 52.18%;
   left: 50%;
   z-index: 2;
   transform: translate(-127.75%, -50%);
@@ -173,21 +173,21 @@ a {
 
 .home-button {
   position: fixed;
-  top: 64%;
+  top: 38%;
   left: 50%;
   z-index: 3;
   transform: translate(50%, -50%);
 }
 .triangle-border-white {
   position: fixed;
-  top: 63.62%;
+  top: 37.06%;
   left: 50%;
   z-index: 2;
   transform: translate(44.25%, -50%);
 }
 .triangle-border {
   position: fixed;
-  top: 63.62%;
+  top: 37.06%;
   left: 50%;
   z-index: 1;
   transform: translate(44.25%, -50%);
@@ -206,7 +206,7 @@ a {
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
-  top: 78%;
+  top: 70%;
   left: 50%;
   transform: translate(50%, -50%);
   z-index: 2;
@@ -236,7 +236,7 @@ a {
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
-  top: 64%;
+  top: 37%;
   left: 50%;
   transform: translate(190%, -50%);
   z-index: 2;
@@ -266,7 +266,7 @@ a {
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
-  top: 53.7%;
+  top: 10.3%;
   left: 50%;
   transform: translate(320%, -50%);
   z-index: 2;
