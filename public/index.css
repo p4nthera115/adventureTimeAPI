@@ -15,7 +15,7 @@ a {
 }
 
 input {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-family: bmoFont;
 }
 
@@ -280,8 +280,38 @@ input {
   display: block;
 }
 
-/* About Button */
-.about-button {
+/* Settings Button */
+.settings-button {
+  position: fixed;
+  height: 13px;
+  width: 55px;
+  background-color: rgb(58, 48, 103);
+  border-radius: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  top: 88%;
+  left: 50%;
+  transform: translate(-124%, -50%);
+  z-index: 2;
+}
+.settings-button:hover {
+  border: 1px solid white;
+}
+.settings-title {
+  position: fixed;
+  top: 27%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: rgba(3, 51, 73, 0.575);
+  display: none;
+}
+.settings-button:hover + .settings-title {
+  display: block;
+}
+
+/* Credits Button */
+.credits-button {
   position: fixed;
   height: 13px;
   width: 55px;
@@ -294,10 +324,10 @@ input {
   transform: translate(-250%, -50%);
   z-index: 2;
 }
-.about-button:hover {
+.credits-button:hover {
   border: 1px solid white;
 }
-.about-title {
+.credits-title {
   position: fixed;
   top: 27%;
   left: 50%;
@@ -306,7 +336,7 @@ input {
   color: rgba(3, 51, 73, 0.575);
   display: none;
 }
-.about-button:hover + .about-title {
+.credits-button:hover + .credits-title {
   display: block;
 }
 
@@ -439,8 +469,8 @@ input {
   color: rgb(23, 84, 112);
 }
 
-/* About Page */
-.about-container {
+/* Credits Page */
+.credits-container {
   position: absolute;
   height: 225px;
   width: 315px;

@@ -73,8 +73,8 @@ app.get("/game", (req, res) => {
   res.render("game", { title: "Game" });
 });
 
-app.get("/about", (req, res) => {
-  res.render("about", { title: "About" });
+app.get("/credits", (req, res) => {
+  res.render("credits", { title: "Credits" });
 });
 
 app.get("/search", (req, res) => {
@@ -83,6 +83,10 @@ app.get("/search", (req, res) => {
   //   return res.render("search", { title: "Search", characters });
   // });
   res.render("search", { title: "Search" });
+});
+
+app.get("/settings", (req, res) => {
+  res.render("settings", { title: "Settings" });
 });
 
 app.use((req, res) => {
