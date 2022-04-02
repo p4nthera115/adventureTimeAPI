@@ -1,6 +1,7 @@
 import express from "express";
 import getCharacter from "./getCharacter";
 import getPlaces from "./getPlaces";
+import getAllCharacters from "./getAllCharacters";
 
 const app = express();
 
@@ -74,6 +75,14 @@ app.get("/game", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
+});
+
+app.get("/search", (req, res) => {
+  // getAllCharacters().then((characters) => {
+  //   console.log(characters);
+  //   return res.render("search", { title: "Search", characters });
+  // });
+  res.render("search", { title: "Search" });
 });
 
 app.use((req, res) => {
