@@ -482,18 +482,18 @@ input {
   color: rgb(23, 84, 112);
   text-align: center;
 }
-.github {
+.credits {
   position: relative;
   text-align: center;
-  color: rgb(23, 84, 112);
+  color: rgba(23, 84, 112, 0.811);
   font-size: 40px;
   font-weight: bold;
   z-index: 3;
   display: inline-block;
   width: 100%;
-  top: 20%;
+  top: 30%;
 }
-.github:hover {
+.credits:hover {
   background-color: rgba(23, 84, 112, 0.822);
   color: rgb(145, 218, 195);
 }
