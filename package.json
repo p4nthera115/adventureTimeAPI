@@ -1,25 +1,24 @@
 {
   "type": "module",
   "scripts": {
-    "build": "webpack --config ./bundler/webpack.prod.js",
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "ejs": ">=3.1.7",
     "express": "^4.17.2",
+    "got": ">=11.8.5",
+    "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.6.0",
     "morgan": "^1.10.0",
     "next": ">=12.1.0",
     "node-fetch": ">=3.2.10",
     "nodemon": "^2.0.16",
-    "vercel": "^28.1.2",
+    "vercel": "^28.4.12",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.8.1",
-    "webpack-merge": "^5.8.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^10.2.4",
-    "html-webpack-plugin": "^5.5.0",
-    "got": ">=11.8.5"
+    "webpack-merge": "^5.8.0"
   }
 }
